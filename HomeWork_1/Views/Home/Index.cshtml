@@ -1,0 +1,12 @@
+﻿@{
+	Layout = null;
+	@model HomeWork_1.Models.FilesViewModel
+}
+
+<form asp-controller="Home" asp-action="UploadFile" method="post"
+	  enctype="multipart/form-data">
+
+	<input type="file" name="file" />
+	<button type="submit">Загрузить на сервер</button>
+	<hr />
+</form>

@@ -1,0 +1,24 @@
+﻿@{
+	Layout = null;
+	@model HomeWork_1.Models.FilesViewModel
+}
+
+<p>List of Files</p>
+
+<table class="table">
+	<tr>
+		<th>Name</th>
+		<th>Download</th>
+		<th>Action</th>
+	</tr>
+	@foreach (var item in Model.Files)
+	{
+		<tr>
+			<td>@item.Name</td>
+			<td><a asp-action="Download" asp-route-filename="@item.Name">@item.Name</a></td>
+			<td><a href="@Url.Action("Delete", "Home", new { filename=@item.Name})">Удалить</a></td>
+		</tr>
+	}
+
+</table>
+
